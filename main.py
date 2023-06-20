@@ -14,9 +14,9 @@ import time
 import random
 from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 
-API_ID = 28883268
-API_HASH = '2850e9f51b84512f603f962ee64ad517'
-SEND_ID = -1646069947
+API_ID = 23444072
+API_HASH = '1c5c0cf6dcd43ab5b506a0ff1aa9e48b'
+SEND_ID = -1976981266
 client = TelegramClient('session', API_ID, API_HASH)
 ccs = []
 chats = [
@@ -98,29 +98,29 @@ async def my_event_handler(m):
     await client.send_message(
         PeerChannel(SEND_ID),
         f"""
-.　 *　.　　ꜱᴄʀᴀᴘᴘᴇʀ ᴀᴜʀᴏʀᴀ　　. 　 ° 　. ● ° .
+.　 *　.　　𝐃𝐘𝐂𝐁𝐍 𝐒𝐜𝐫𝐚𝐩𝐩𝐞𝐫　　. 　 ° 　. ● ° .
 
 
 𝐂𝐂 : ```{cc}|{mes}|{ano}|{cvv}```
 
 - - - - - - - - - - - - - - - - - - - - - - - - 
-⌜☂⌟ 𝐁𝐢𝐧 :  [ ```{cc[:6]}``` ]
-⌜☂⌟ 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 » : {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
-⌜☂⌟ 𝗕𝗮𝗻𝗸 » : {bin_json['bank']['name']}
-⌜☂⌟ 𝗖𝗼𝘂𝗻𝘁𝗿𝘆 » : {bin_json['country']['name']} - {bin_json['country']['emoji']}
+⌜☾⌟ 𝐁𝐢𝐧 :  [ ```{cc[:6]}``` ]
+⌜☾⌟ 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 » : {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
+⌜☾⌟ 𝗕𝗮𝗻𝗸 » : {bin_json['bank']['name']}
+⌜☾⌟ 𝗖𝗼𝘂𝗻𝘁𝗿𝘆 » : {bin_json['country']['name']} - {bin_json['country']['emoji']}
 - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ⌜☂⌟ ᴇxᴛʀᴀ: ```{extra}xxxx|{mes}|{ano}|rnd```
 
-ʕ　·ᴥ·ʔ 𝘿𝙚𝙫 : [ @ReyAustin  ❝ 𝐀𝐁 𝐎𝐖𝐍𝐄𝐑 ❞ ]
+ʕ　·ᴥ·ʔ 𝘿𝙚𝙫 : [ @ReyAustin ]
 
     ━━━━━━━━━━[⭐️]━━━━━━━━━━
-    𝐀𝐔𝐑𝐎𝐑𝐀 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐎𝐅𝐈𝐂𝐈𝐀𝐋
-    https://t.me/aurorabining
+    𝙳𝚈𝙲𝙱𝙽 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 | 𝙑𝙋𝙎 11.4
+    https://t.me/+AS6e8eQdKshkMjJh
     ━━━━━━━━━━[⭐️]━━━━━━━━━━
 
 ★　　★°★ . *. °☆ . ● . ★　☆　★ ° ☆ ¸. ¸★
-""",file = foto_aurora)
+""")
 
 
 @client.on(events.NewMessage(outgoing=True, pattern=re.compile(r'.lives')))
