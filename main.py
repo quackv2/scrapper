@@ -6,6 +6,7 @@ import os, sys
 import re
 import requests
 from telethon import TelegramClient, events
+from telethon import Button
 import random_address
 from random_address import real_random_address
 import names
@@ -84,7 +85,7 @@ async def my_event_handler(m):
         return
     ccs.append(cc)
     extra = cc[0:0 + 12]
-    bin = requests.get(f"""https://lookup.binlist.net/{cc[:6]}""")
+    bin = requests.get(f"https://lookup.binlist.net/{cc[:6]}")
     if not bin:
         return
     bin_json =  bin.json()
@@ -95,33 +96,37 @@ async def my_event_handler(m):
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
     foto_aurora = random.choice(["aurora1.jpg", "aurora2.jpg", "aurora3.jpg", "aurora4.jpg", "aurora5.jpg"])
-    await client.send_message(
-        PeerChannel(SEND_ID),
-        f"""
-.　 *　.　　𝐃𝐘𝐂𝐁𝐍 𝐒𝐜𝐫𝐚𝐩𝐩𝐞𝐫　　. 　 ° 　. ● ° .
+
+await client.send_message(
+    PeerChannel(SEND_ID),
+    f"""
+    .　 *　.　　𝐃𝐘𝐂𝐁𝐍 𝐒𝐜𝐫𝐚𝐩𝐩𝐞𝐫　　. 　 ° 　. ● ° .
 
 
-𝐂𝐂 : ```{cc}|{mes}|{ano}|{cvv}```
+    𝐂𝐂 : ```{cc}|{mes}|{ano}|{cvv}```
 
-- - - - - - - - - - - - - - - - - - - - - - - - 
-⌜☾⌟ 𝐁𝐢𝐧 :  [ ```{cc[:6]}``` ]
-⌜☾⌟ 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 » : {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
-⌜☾⌟ 𝗕𝗮𝗻𝗸 » : {bin_json['bank']['name']}
-⌜☾⌟ 𝗖𝗼𝘂𝗻𝘁𝗿𝘆 » : {bin_json['country']['name']} - {bin_json['country']['emoji']}
-- - - - - - - - - - - - - - - - - - - - - - - - 
+    - - - - - - - - - - - - - - - - - - - - - - - - 
+    ⌜☾⌟ 𝐁𝐢𝐧 :  [ ```{cc[:6]}``` ]
+    ⌜☾⌟ 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 » : {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
+    ⌜☾⌟ 𝗕𝗮𝗻𝗸 » : {bin_json['bank']['name']}
+    ⌜☾⌟ 𝗖𝗼𝘂𝗻𝘁𝗿𝘆 » : {bin_json['country']['name']} - {bin_json['country']['emoji']}
+    - - - - - - - - - - - - - - - - - - - - - - - - 
 
-⌜☂⌟ ᴇxᴛʀᴀ: ```{extra}xxxx|{mes}|{ano}|rnd```
+    ⌜☂⌟ ᴇxᴛʀᴀ: ```{extra}xxxx|{mes}|{ano}|rnd```
 
-ʕ　·ᴥ·ʔ 𝘿𝙚𝙫 : [ @ReyAustin ]
+    ʕ　·ᴥ·ʔ 𝘿𝙚𝙫 : [ @ReyAustin ]
 
     ━━━━━━━━━━[⭐️]━━━━━━━━━━
     𝙳𝚈𝙲𝙱𝙽 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 | 𝙑𝙋𝙎 11.4
     https://t.me/+AS6e8eQdKshkMjJh
     ━━━━━━━━━━[⭐️]━━━━━━━━━━
 
-★　　★°★ . *. °☆ . ● . ★　☆　★ ° ☆ ¸. ¸★
-""")
-
+    ★　　★°★ . *. °☆ . ● . ★　☆　★ ° ☆ ¸. ¸★
+    """,
+    buttons=[
+        Button.url('Ir al canal', 'https://t.me/+AS6e8eQdKshkMjJh')
+    ]
+)
 
 @client.on(events.NewMessage(outgoing=True, pattern=re.compile(r'.lives')))
 async def my_event_handler(m):
