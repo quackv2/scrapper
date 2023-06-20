@@ -43,7 +43,6 @@ chats = [
     '@ScrapeLive',
     '@leonbinerss',
     '@SexyDrops',
-    '@cardesclub',
     '@kurumichks',
     '@binners_LA',
     '@CHECKEREstefany_bot',
